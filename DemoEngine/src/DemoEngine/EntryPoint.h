@@ -6,7 +6,10 @@ extern DemoEngine::Application* DemoEngine::CreateApplication();
 
 int main(int argc, char** argv)
 {
-	printf("Demo Engine started...\n");
+	DemoEngine::Log::Init();
+	LOG_CORE_INFO("Logger initialized (engine core)");
+	LOG_INFO("Logger initialized (client application)");
+
 	auto app = DemoEngine::CreateApplication();
 	app->Run();
 	delete app;
