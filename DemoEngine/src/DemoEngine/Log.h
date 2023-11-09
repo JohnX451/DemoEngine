@@ -1,5 +1,10 @@
 #pragma once
 
+/*
+	Uses spdlog: https://github.com/gabime/spdlog/
+	Copyright (c) 2016 Gabi Melman.
+*/
+
 #include <memory>
 #include "Core.h"
 #include "spdlog/spdlog.h"
