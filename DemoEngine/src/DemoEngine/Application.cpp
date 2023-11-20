@@ -1,15 +1,16 @@
 #include "pch.h"
 #include "Application.h"
 
-#include "DemoEngine/Events/ApplicationEvent.h"
-
 #include "GLFW/glfw3.h"
 
 namespace DemoEngine {
 
+#define BIND_EVENT_FN(x) std::bind(&x, this, std::placeholders::_1)
+
 	Application::Application()
 	{
 		m_Window = std::unique_ptr<Window>(Window::Create());
+		m_Window->SetEventCallback(BIND_EVENT_FN(Application::OnEvent));
 	}
 
 	Application::~Application()
@@ -24,6 +25,20 @@ namespace DemoEngine {
 			glClear(GL_COLOR_BUFFER_BIT);
 			m_Window->OnUpdate();
 		}
+	}
+
+	void Application::OnEvent(Event& e)
+	{
+		EventDispatcher dispatcher(e);
+		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(Application::OnWindowClosed));
+
+		LOG_CORE_TRACE("{0}", e);
+	}
+
+	bool Application::OnWindowClosed(WindowCloseEvent& e)
+	{
+		m_Running = false;
+		return true;
 	}
 
 }
