@@ -17,12 +17,16 @@ project "DemoEngine"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "pch.h"
+	pchsource "DemoEngine/src/pch.cpp"
+
 	files {
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp"
 	}
 
 	includedirs {
+		"%{prj.name}/src",
 		"%{prj.name}/thirdparty/spdlog/include"
 	}
 

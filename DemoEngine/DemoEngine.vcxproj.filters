@@ -4,6 +4,9 @@
     <Filter Include="DemoEngine">
       <UniqueIdentifier>{00C011DF-EC77-532C-557F-2C884156EE1C}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DemoEngine\Events">
+      <UniqueIdentifier>{E46B0F4D-5082-0DE3-99F9-9804054FDE6A}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\DemoEngine.h" />
@@ -16,9 +19,22 @@
     <ClInclude Include="src\DemoEngine\EntryPoint.h">
       <Filter>DemoEngine</Filter>
     </ClInclude>
+    <ClInclude Include="src\DemoEngine\Events\ApplicationEvent.h">
+      <Filter>DemoEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DemoEngine\Events\Event.h">
+      <Filter>DemoEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DemoEngine\Events\KeyEvent.h">
+      <Filter>DemoEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DemoEngine\Events\MouseEvent.h">
+      <Filter>DemoEngine\Events</Filter>
+    </ClInclude>
     <ClInclude Include="src\DemoEngine\Log.h">
       <Filter>DemoEngine</Filter>
     </ClInclude>
+    <ClInclude Include="src\pch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\DemoEngine\Application.cpp">
@@ -27,5 +43,6 @@
     <ClCompile Include="src\DemoEngine\Log.cpp">
       <Filter>DemoEngine</Filter>
     </ClCompile>
+    <ClCompile Include="src\pch.cpp" />
   </ItemGroup>
 </Project>
