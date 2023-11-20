@@ -1,3 +1,6 @@
 [submodule "DemoEngine/thirdparty/spdlog"]
 	path = DemoEngine/thirdparty/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "DemoEngine/thirdparty/GLFW"]
+	path = DemoEngine/thirdparty/GLFW
+	url = https://github.com/TheCherno/glfw

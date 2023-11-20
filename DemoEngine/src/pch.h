@@ -12,6 +12,8 @@
 #include <unordered_map>
 #include <unordered_set>
 
+#include "DemoEngine/Log.h"
+
 #ifdef DEMOENGINE_PLATFORM_WINDOWS
 	#include <Windows.h>
 #endif

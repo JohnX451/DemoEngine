@@ -9,6 +9,11 @@ workspace "DemoEngine"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+IncludeDir = {}
+IncludeDir["GLFW"] = "DemoEngine/thirdparty/GLFW/include"
+
+include "DemoEngine/thirdparty/GLFW"
+
 project "DemoEngine"
 	location "DemoEngine"
 	kind "SharedLib"
@@ -27,12 +32,19 @@ project "DemoEngine"
 
 	includedirs {
 		"%{prj.name}/src",
-		"%{prj.name}/thirdparty/spdlog/include"
+		"%{prj.name}/thirdparty/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links {
+		"GLFW",
+		"opengl32.lib",
+		"dwmapi.lib"
 	}
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
+		staticruntime "Off"
 		systemversion "latest"
 
 		defines {

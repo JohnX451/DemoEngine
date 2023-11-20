@@ -1,5 +1,6 @@
 #pragma once
 
+#include "pch.h"
 #include "DemoEngine/Core.h"
 
 namespace DemoEngine {
