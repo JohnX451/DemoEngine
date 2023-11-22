@@ -1,3 +1,6 @@
+# Exceptions
+!premake5.exe
+
 # Directories
 .vs/
 bin/
