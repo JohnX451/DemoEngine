@@ -7,8 +7,8 @@ extern DemoEngine::Application* DemoEngine::CreateApplication();
 int main(int argc, char** argv)
 {
 	DemoEngine::Log::Init();
-	LOG_CORE_INFO("Logger initialized (engine core)");
-	LOG_INFO("Logger initialized (client application)");
+	LOG_CORE_INFO("Logger (engine core) initialized in entry point");
+	LOG_INFO("Logger (client application) initialized in entry point");
 
 	auto app = DemoEngine::CreateApplication();
 	app->Run();

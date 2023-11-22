@@ -11,10 +11,12 @@ namespace DemoEngine {
 	{
 		m_Window = std::unique_ptr<Window>(Window::Create());
 		m_Window->SetEventCallback(BIND_EVENT_FN(Application::OnEvent));
+		LOG_CORE_INFO("Application constructor called");
 	}
 
 	Application::~Application()
 	{
+		LOG_CORE_INFO("Application destructor called");
 	}
 
 	void Application::Run()
