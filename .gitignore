@@ -1,6 +1,3 @@
-# Exceptions
-!thirdparty/bin/premake/premake5.exe
-
 # Directories
 .vs/
 bin/
@@ -41,3 +38,6 @@ bin-int/
 *.exe
 *.out
 *.app
+
+# Exceptions
+!premake5.exe
